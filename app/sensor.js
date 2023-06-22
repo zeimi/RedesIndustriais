@@ -3,10 +3,11 @@ const axios = require('axios');
 setInterval(() => {
     axios.get('http://localhost:5000/temperatura')
         .then((response) => {
-            console.log(`Temperatura medida: ${response.data.temperatura}`);
-            axios.post('http://localhost:3000/sensor', { temperatura: response.data.temperatura })
-                .then((response) => {
-                    console.log(response.data);
+            let temperaturaAtual = response.data.temperatura;
+            console.log(`Temperatura medida: ${temperaturaAtual}`);
+            axios.post('http://localhost:3000/controlador', { temperatura: temperaturaAtual })
+                .then((res) => {
+                    console.log(res.data);
                 })
                 .catch((error) => {
                     console.error(error);
@@ -15,4 +16,4 @@ setInterval(() => {
         .catch((error) => {
             console.error(error);
         });
-}, 10000); // pega a temperatura da caldeira a cada 10 segundos
+}, 10000);

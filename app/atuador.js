@@ -5,14 +5,15 @@ app.use(express.json());
 
 app.post('/atuador', (req, res) => {
     let comando = req.body.comando;
+    let valor = req.body.valor;
 
     if (comando === 'aumentar') {
-        console.log('Executando comando: aumentar temperatura');
+        console.log(`Executando comando: aumentar temperatura em ${valor} graus`);
     } else if (comando === 'diminuir') {
-        console.log('Executando comando: diminuir temperatura');
+        console.log(`Executando comando: diminuir temperatura em ${valor} graus`);
     }
 
-    axios.post('http://localhost:5000/temperatura', { comando: comando, valor: 5, origem: 'Atuador' })
+    axios.post('http://localhost:5000/temperatura', { comando: comando, valor: valor, origem: 'Atuador' })
         .then((response) => {
             console.log(response.data);
         })
