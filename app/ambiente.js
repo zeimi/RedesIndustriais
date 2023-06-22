@@ -10,15 +10,15 @@ class Caldeira {
     aumentarTemperatura(valor, origem) {
         this.temperatura += valor; // aumenta a temperatura pelo valor passado
         if (origem === 'Atuador') {
-            console.log(`Comando executado: aumentar. Origem: ${origem}. Temperatura resultante: ${this.temperatura}`);
+            console.log(`Comando executado: aumentar. Origem: ${origem}\nTemperatura resultante: ${this.temperatura}\n`);
         } else {
-            console.log(`Temperatura aumentou por causa do ambiente. Temperatura resultante: ${this.temperatura}`);
+            console.log(`Temperatura aumentou por causa do ambiente.\nTemperatura resultante: ${this.temperatura}\n`);
         }
     }
 
     diminuirTemperatura(valor, origem) {
         this.temperatura -= valor; // diminui a temperatura pelo valor passado
-        console.log(`Comando executado: diminuir. Origem: ${origem}. Temperatura resultante: ${this.temperatura}`);
+        console.log(`Comando executado: diminuir. Origem: ${origem}.\nTemperatura resultante: ${this.temperatura}\n`);
     }
 
     getTemperatura() {
