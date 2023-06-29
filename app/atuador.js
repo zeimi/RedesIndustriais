@@ -1,3 +1,4 @@
+// Importação de bibliotecas node.js
 const express = require('express');
 const axios = require('axios');
 const chalk = require('chalk');
