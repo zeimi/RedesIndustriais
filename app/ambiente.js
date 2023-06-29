@@ -1,4 +1,4 @@
-// Importação de bibliotecas do node.js
+// Importação de bibliotecas do Node.js
 const chalk = require('chalk'); // Biblioteca que colore os console.log no terminal
 const express = require('express'); // Biblioteca que lida com servidores REST
 const app = express(); // Constante app que se torna o servidor
